@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  flask-service:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - msg_data:/mnt
+    environment:
+      - MSG_FILE_LOCATION=/mnt/msg.txt
+
+volumes:
+  msg_data:
